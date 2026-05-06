@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classic Guess - DBD Mini Games</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body>
+  <main class="game-page" data-game-mode="quote">
+    <section class="play-panel">
+      <div class="top-row">
+        <a class="back-link" href="../../">← Back home</a>
+        <span class="mode-label">Demo Mode</span>
+      </div>
+
+      <h1 id="modeTitle">Classic Guess</h1>
+      <p class="helper-text">
+        This is using temporary frontend demo data. The real version will use the private API.
+      </p>
+
+      <div class="clue-box">
+        <p class="clue-title">Clue</p>
+        <p class="clue-text" id="clueText">Loading...</p>
+        <p class="helper-text" id="helperText"></p>
+      </div>
+
+      <div class="answer-row">
+        <input class="answer-input" id="answerInput" placeholder="Type your guess..." autocomplete="off" />
+        <button id="submitBtn">Submit</button>
+      </div>
+
+      <div class="result-box" id="result"></div>
+
+      <div class="score-row">
+        <span class="score-pill" id="scoreText">Score: 0</span>
+        <span class="score-pill" id="playedText">Played: 0</span>
+        <button class="secondary-btn" id="nextBtn">Next round</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../assets/js/app.js"></script>
+</body>
+</html>
