@@ -24,10 +24,41 @@ function normalizeAnswer(value) {
   return String(value || "")
     .trim()
     .toLowerCase()
-    .replace(/^the\s+/, "")
     .replace(/[^a-z0-9]+/g, " ")
     .replace(/\s+/g, " ")
+    .replace(/^the\s+/, "")
     .trim();
+}
+
+function getAnswerTokens(value) {
+  return normalizeAnswer(value)
+    .split(" ")
+    .map(part => part.trim())
+    .filter(part => part.length >= 3);
+}
+
+function isCorrectGuess(guessValue, round) {
+  const guess = normalizeAnswer(guessValue);
+  if (!guess || !round) return false;
+
+  const accepted = [
+    round.answer,
+    ...(round.aliases || [])
+  ]
+    .map(normalizeAnswer)
+    .filter(Boolean);
+
+  if (accepted.includes(guess)) return true;
+
+  for (const value of accepted) {
+    const tokens = getAnswerTokens(value);
+
+    if (tokens.includes(guess)) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function shuffleList(list) {
@@ -87,6 +118,24 @@ async function loadRoundData() {
   roundsByMode = await response.json();
 }
 
+async function loadSiteInfo() {
+  const versionEl = document.getElementById("siteVersion");
+  if (!versionEl) return;
+
+  try {
+    const response = await fetch("assets/data/site.json");
+
+    if (!response.ok) {
+      throw new Error("Could not load site.json");
+    }
+
+    const info = await response.json();
+    versionEl.textContent = info.version || "v0.0.1";
+  } catch {
+    versionEl.textContent = "v0.0.1";
+  }
+}
+
 function setResult(message, state) {
   const result = document.getElementById("result");
   if (!result) return;
@@ -113,6 +162,11 @@ function setInputLocked(locked) {
   if (submit) submit.disabled = locked;
 }
 
+function setNextLocked(locked) {
+  const next = document.getElementById("nextBtn");
+  if (next) next.disabled = locked;
+}
+
 function updateScore() {
   saveBestScore();
 
@@ -136,33 +190,56 @@ function hideCharacterReveal() {
   const name = document.getElementById("characterName");
 
   if (reveal) reveal.hidden = true;
-  if (image) image.removeAttribute("src");
-  if (image) image.alt = "";
+  if (image) {
+    image.removeAttribute("src");
+    image.alt = "";
+  }
   if (name) name.textContent = "";
 }
 
 function showCharacterReveal() {
-  if (!currentRound?.image) return;
-
   const reveal = document.getElementById("characterReveal");
   const image = document.getElementById("characterImage");
   const name = document.getElementById("characterName");
 
-  if (!reveal || !image || !name) return;
+  if (!reveal || !name) return;
 
-  image.src = currentRound.image;
-  image.alt = currentRound.answer;
   name.textContent = currentRound.answer;
+
+  if (image && currentRound.image) {
+    image.src = currentRound.image;
+    image.alt = currentRound.answer;
+
+    image.onerror = () => {
+      image.removeAttribute("src");
+      image.alt = "";
+      image.style.display = "none";
+    };
+
+    image.onload = () => {
+      image.style.display = "";
+    };
+  }
+
   reveal.hidden = false;
 }
 
-function getCurrentHint() {
+function getLastTryHint() {
   const hints = currentRound?.hints || [];
   if (!hints.length) return "";
 
-  if (tries <= 0) return "";
-  if (tries === 1) return hints[0] || "";
-  return hints[1] || hints[0] || "";
+  return hints[hints.length - 1] || "";
+}
+
+function finishRound(message, state) {
+  played += 1;
+  roundLocked = true;
+
+  setInputLocked(true);
+  setNextLocked(false);
+  showCharacterReveal();
+  setResult(message, state);
+  updateScore();
 }
 
 function loadRound() {
@@ -178,6 +255,7 @@ function loadRound() {
   }
 
   setInputLocked(false);
+  setNextLocked(true);
   clearResult();
   hideCharacterReveal();
 
@@ -185,11 +263,12 @@ function loadRound() {
     setText("clueText", "No rounds found for this mode yet.");
     setText("helperText", "");
     setInputLocked(true);
+    setNextLocked(true);
     return;
   }
 
   setText("clueText", currentRound.clue);
-  setText("helperText", "You get 3 tries. Extra hints only appear after wrong guesses.");
+  setText("helperText", "");
   updateScore();
 }
 
@@ -197,48 +276,38 @@ function checkAnswer() {
   if (!currentRound || roundLocked) return;
 
   const input = document.getElementById("answerInput");
-  const guess = normalizeAnswer(input?.value);
-  const answer = normalizeAnswer(currentRound.answer);
-  const aliases = (currentRound.aliases || []).map(normalizeAnswer);
+const rawGuess = input?.value || "";
+const guess = normalizeAnswer(rawGuess);
 
-  if (!guess) {
-    setResult("Type a guess first.", "warning");
-    return;
-  }
+if (!guess) {
+  setResult("Type a guess first.", "warning");
+  return;
+}
 
-  tries += 1;
+tries += 1;
 
-  const correct = guess === answer || aliases.includes(guess);
+const correct = isCorrectGuess(rawGuess, currentRound);
 
   if (correct) {
     score += 1;
-    played += 1;
-    roundLocked = true;
-    setInputLocked(true);
-    showCharacterReveal();
-    setResult(`Correct. The answer was ${currentRound.answer}.`, "correct");
-    updateScore();
+    finishRound(`Correct. The answer was ${currentRound.answer}.`, "correct");
     return;
   }
 
   if (tries >= MAX_TRIES) {
-    played += 1;
-    roundLocked = true;
-    setInputLocked(true);
-    showCharacterReveal();
-    setResult(`Out of tries. The answer was ${currentRound.answer}.`, "wrong");
-    updateScore();
+    finishRound(`Out of tries. The answer was ${currentRound.answer}.`, "wrong");
     return;
   }
 
-  const hint = getCurrentHint();
   const triesLeft = MAX_TRIES - tries;
 
-  if (hint) {
-    setText("helperText", hint);
+  if (triesLeft === 1) {
+    const hint = getLastTryHint();
+    if (hint) setText("helperText", hint);
+    setResult("Wrong. Last try left.", "warning");
+  } else {
+    setResult(`Wrong. ${triesLeft} tries left.`, "wrong");
   }
-
-  setResult(`Wrong. ${triesLeft} ${triesLeft === 1 ? "try" : "tries"} left.`, "wrong");
 
   if (input) {
     input.value = "";
@@ -270,8 +339,9 @@ async function initGamePage() {
     console.error(error);
     setText("modeTitle", "DBD Mini Game");
     setText("clueText", "Could not load the round data.");
-    setText("helperText", "Check assets/data/rounds.json and make sure the path is correct.");
+    setText("helperText", "Run the site through GitHub Pages or a local web server. Opening the HTML file directly can block JSON loading.");
     setInputLocked(true);
+    setNextLocked(true);
     return;
   }
 
@@ -298,4 +368,7 @@ async function initGamePage() {
   loadRound();
 }
 
-document.addEventListener("DOMContentLoaded", initGamePage);
+document.addEventListener("DOMContentLoaded", () => {
+  loadSiteInfo();
+  initGamePage();
+});

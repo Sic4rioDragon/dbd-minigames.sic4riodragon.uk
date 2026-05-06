@@ -400,3 +400,258 @@ button:disabled {
   border: 1px solid rgba(214, 168, 79, 0.55);
   background: rgba(214, 168, 79, 0.10);
 }
+.compact-panel {
+  width: min(760px, 100%);
+  padding: 26px;
+}
+
+.compact-clue {
+  margin: 18px 0;
+  padding: 20px;
+}
+
+.compact-clue .clue-text {
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+}
+
+.compact-score {
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.compact-score .score-pill {
+  padding: 6px 9px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.action-row button {
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.character-reveal {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid rgba(214, 168, 79, 0.35);
+  border-radius: 16px;
+  background: rgba(214, 168, 79, 0.08);
+}
+
+.character-reveal[hidden] {
+  display: none;
+}
+
+.character-reveal img {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.reveal-label {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.reveal-name {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.result-box[data-state="warning"] {
+  border: 1px solid rgba(214, 168, 79, 0.55);
+  background: rgba(214, 168, 79, 0.10);
+}
+
+@media (max-width: 640px) {
+  .action-row {
+    flex-direction: column;
+  }
+
+  .compact-score .score-pill {
+    font-size: 0.82rem;
+  }
+
+  .character-reveal {
+    align-items: flex-start;
+  }
+
+  .character-reveal img {
+    width: 72px;
+    height: 72px;
+  }
+}
+/* final game-page polish */
+
+.game-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+}
+
+.compact-panel {
+  width: min(760px, 100%);
+  padding: 26px;
+}
+
+.compact-clue {
+  margin: 18px 0;
+  padding: 20px;
+}
+
+.compact-clue .clue-text {
+  font-size: clamp(1.25rem, 3.2vw, 2rem);
+}
+
+.helper-text:empty {
+  display: none;
+}
+
+.answer-row {
+  align-items: stretch;
+}
+
+.answer-input {
+  min-height: 52px;
+}
+
+.score-row.compact-score {
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.compact-score .score-pill {
+  padding: 6px 9px;
+  font-size: 0.88rem;
+  border-radius: 12px;
+  line-height: 1.15;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.action-row button {
+  width: auto;
+  min-height: 40px;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: grayscale(0.35);
+}
+
+.result-box[data-state="correct"] {
+  border: 1px solid rgba(98, 220, 127, 0.45);
+  background: rgba(98, 220, 127, 0.10);
+}
+
+.result-box[data-state="wrong"] {
+  border: 1px solid rgba(255, 55, 55, 0.45);
+  background: rgba(255, 55, 55, 0.10);
+}
+
+.result-box[data-state="warning"] {
+  border: 1px solid rgba(214, 168, 79, 0.55);
+  background: rgba(214, 168, 79, 0.10);
+}
+
+.character-reveal {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid rgba(214, 168, 79, 0.35);
+  border-radius: 16px;
+  background: rgba(214, 168, 79, 0.08);
+}
+
+.character-reveal[hidden] {
+  display: none;
+}
+
+.character-reveal img {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.reveal-label {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.reveal-name {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+@media (max-width: 640px) {
+  .compact-panel {
+    padding: 22px;
+  }
+
+  .action-row {
+    flex-direction: column;
+  }
+
+  .action-row button {
+    width: 100%;
+  }
+
+  .compact-score .score-pill {
+    font-size: 0.82rem;
+  }
+
+  .character-reveal {
+    align-items: flex-start;
+  }
+
+  .character-reveal img {
+    width: 72px;
+    height: 72px;
+  }
+}
+.version-line {
+  display: inline-flex;
+  gap: 6px;
+  margin: 18px 0 0;
+  padding: 8px 11px;
+  color: var(--gold);
+  border: 1px solid rgba(214, 168, 79, 0.35);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
