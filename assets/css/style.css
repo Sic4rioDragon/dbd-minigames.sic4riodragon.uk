@@ -15,18 +15,60 @@
   box-sizing: border-box;
 }
 
+* {
+  scrollbar-color: rgba(214, 168, 79, 0.6) rgba(0, 0, 0, 0.35);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(214, 168, 79, 0.55);
+  border: 3px solid rgba(0, 0, 0, 0.45);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(214, 168, 79, 0.8);
+}
+
 html {
   min-height: 100%;
+  background: #070708;
 }
 
 body {
-  min-height: 100%;
+  min-height: 100vh;
   margin: 0;
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
+  background: #070708;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.84)),
-    url("https://sic4riodragon.uk/assets/general.png") center / cover fixed;
+    linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.86)),
+    url("https://sic4riodragon.uk/assets/general.png") center center / cover no-repeat;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top left, rgba(185, 39, 39, 0.18), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(214, 168, 79, 0.10), transparent 30%);
 }
 
 a {
@@ -281,6 +323,16 @@ button:hover {
   line-height: 1.5;
 }
 
+.result-box[data-state="correct"] {
+  border: 1px solid rgba(98, 220, 127, 0.45);
+  background: rgba(98, 220, 127, 0.10);
+}
+
+.result-box[data-state="wrong"] {
+  border: 1px solid rgba(255, 55, 55, 0.45);
+  background: rgba(255, 55, 55, 0.10);
+}
+
 .result-box.show {
   display: block;
 }
@@ -326,4 +378,25 @@ button:hover {
   button {
     width: 100%;
   }
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  filter: grayscale(0.35);
+}
+
+.result-box[data-state="correct"] {
+  border: 1px solid rgba(98, 220, 127, 0.45);
+  background: rgba(98, 220, 127, 0.10);
+}
+
+.result-box[data-state="wrong"] {
+  border: 1px solid rgba(255, 55, 55, 0.45);
+  background: rgba(255, 55, 55, 0.10);
+}
+
+.result-box[data-state="warning"] {
+  border: 1px solid rgba(214, 168, 79, 0.55);
+  background: rgba(214, 168, 79, 0.10);
 }
