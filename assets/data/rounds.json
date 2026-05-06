@@ -1,0 +1,172 @@
+{
+  "classic": [
+    {
+      "id": "classic_yui_001",
+      "type": "survivor",
+      "clue": "A survivor connected to motorcycles, racing, and rebellious street style.",
+      "hints": [
+        "This survivor is from the Cursed Legacy chapter.",
+        "Her first name is Yui."
+      ],
+      "answer": "Yui Kimura",
+      "aliases": ["yui", "yui kimura"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/1/13/S20_YuiKimura_Portrait.png"
+    },
+    {
+      "id": "classic_yunjin_001",
+      "type": "survivor",
+      "clue": "A survivor connected to fame, music production, and the All-Kill chapter.",
+      "hints": [
+        "She worked in the music industry.",
+        "She worked with Ji-Woon Hak."
+      ],
+      "answer": "Yun-Jin Lee",
+      "aliases": ["yun jin", "yun-jin", "yun-jin lee", "yunjin"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/8/87/S22_YunJinLee_Portrait.png"
+    },
+    {
+      "id": "classic_nea_001",
+      "type": "survivor",
+      "clue": "A survivor tied to street art, urban movement, and a rebellious lifestyle.",
+      "hints": [
+        "She is from the Last Breath chapter.",
+        "Her first name is Nea."
+      ],
+      "answer": "Nea Karlsson",
+      "aliases": ["nea", "nea karlsson"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/e/e6/S05_NeaKarlsson_Portrait.png"
+    },
+    {
+      "id": "classic_trickster_001",
+      "type": "killer",
+      "clue": "A killer connected to fame, music, neon style, and knives.",
+      "hints": [
+        "He is from the All-Kill chapter.",
+        "His real name is Ji-Woon Hak."
+      ],
+      "answer": "Trickster",
+      "aliases": ["the trickster", "trickster", "ji-woon", "ji woon", "ji-woon hak"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/c9/K23_TheTrickster_Portrait.png"
+    }
+  ],
+
+  "killer": [
+    {
+      "id": "killer_legion_001",
+      "type": "killer",
+      "clue": "This killer is more than one person, but the trial only shows one at a time.",
+      "hints": [
+        "Their power is tied to chaining injuries.",
+        "Frank, Julie, Susie, and Joey."
+      ],
+      "answer": "Legion",
+      "aliases": ["the legion", "legion", "frank", "julie", "susie", "joey"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/53/K14_TheLegion_Portrait.png"
+    },
+    {
+      "id": "killer_trickster_001",
+      "type": "killer",
+      "clue": "This killer turns performance and attention into something deadly.",
+      "hints": [
+        "He is connected to the All-Kill chapter.",
+        "He throws knives."
+      ],
+      "answer": "Trickster",
+      "aliases": ["the trickster", "trickster", "ji woon", "ji-woon", "ji-woon hak"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/c9/K23_TheTrickster_Portrait.png"
+    }
+  ],
+
+  "emoji": [
+    {
+      "id": "emoji_huntress_001",
+      "type": "killer",
+      "clue": "🪓 🎵 🌲",
+      "hints": [
+        "The audio clue matters a lot.",
+        "She hums a lullaby."
+      ],
+      "answer": "Huntress",
+      "aliases": ["the huntress", "huntress", "anna"]
+    },
+    {
+      "id": "emoji_onryo_001",
+      "type": "killer",
+      "clue": "📺 💀 🕯️",
+      "hints": [
+        "The TV is the biggest clue.",
+        "Her name is Sadako."
+      ],
+      "answer": "Onryo",
+      "aliases": ["the onryo", "onryo", "sadako"]
+    }
+  ],
+
+  "perk": [
+    {
+      "id": "perk_lithe_001",
+      "type": "perk",
+      "clue": "After a rushed vault, you break into a sprint.",
+      "hints": [
+        "It is a survivor exhaustion perk.",
+        "The name starts with L."
+      ],
+      "answer": "Lithe",
+      "aliases": ["lithe"]
+    },
+    {
+      "id": "perk_merciless_storm_001",
+      "type": "perk",
+      "clue": "When a generator is close to completion, survivors face a chain of difficult skill checks.",
+      "hints": [
+        "It is a killer perk.",
+        "It belongs to Onryo."
+      ],
+      "answer": "Merciless Storm",
+      "aliases": ["merciless storm"]
+    }
+  ],
+
+  "quote": [
+    {
+      "id": "quote_entity_001",
+      "type": "quote",
+      "clue": "\"Death is not an escape.\"",
+      "hints": [
+        "This is not a normal character.",
+        "It controls the realm."
+      ],
+      "answer": "The Entity",
+      "aliases": ["entity", "the entity"]
+    }
+  ],
+
+  "lore": [
+    {
+      "id": "lore_trickster_001",
+      "type": "killer",
+      "clue": "A performer whose career became tied to violence, fame, and bright neon style.",
+      "hints": [
+        "He is from All-Kill.",
+        "His real name is Ji-Woon Hak."
+      ],
+      "answer": "Trickster",
+      "aliases": ["the trickster", "trickster", "ji woon", "ji-woon", "ji-woon hak"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/c9/K23_TheTrickster_Portrait.png"
+    }
+  ],
+
+  "terror": [
+    {
+      "id": "terror_huntress_001",
+      "type": "killer",
+      "clue": "A lullaby reaches you before the real danger fully arrives.",
+      "hints": [
+        "This is an audio clue before the chase gets serious.",
+        "Hatchets."
+      ],
+      "answer": "Huntress",
+      "aliases": ["the huntress", "huntress", "anna"]
+    }
+  ]
+}

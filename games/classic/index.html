@@ -9,8 +9,12 @@
   <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 <body>
-  <main class="game-page" data-game-mode="classic">
-    <section class="play-panel">
+  <main
+    class="game-page"
+    data-game-mode="classic"
+    data-rounds-path="../../assets/data/rounds.json"
+  >
+    <section class="play-panel compact-panel">
       <div class="top-row">
         <a class="back-link" href="../../">← Back home</a>
         <span class="mode-label">Demo Mode</span>
@@ -18,7 +22,7 @@
 
       <h1 id="modeTitle">Loading...</h1>
 
-      <div class="clue-box">
+      <div class="clue-box compact-clue">
         <p class="clue-title">Clue</p>
         <p class="clue-text" id="clueText">Loading...</p>
         <p class="helper-text" id="helperText"></p>
@@ -31,12 +35,23 @@
 
       <div class="result-box" id="result"></div>
 
-      <div class="score-row">
-        <span class="score-pill" id="scoreText">Score: 0</span>
-        <span class="score-pill" id="playedText">Played: 0</span>
-        <span class="score-pill" id="bestText">Best: 0</span>
-        <span class="score-pill" id="leftText">Left: 0</span>
-        <span class="score-pill" id="triesText">Tries: 0/3</span>
+      <div class="character-reveal" id="characterReveal" hidden>
+        <img id="characterImage" alt="" />
+        <div>
+          <p class="reveal-label">Revealed answer</p>
+          <p class="reveal-name" id="characterName"></p>
+        </div>
+      </div>
+
+      <div class="score-row compact-score">
+        <span class="score-pill" id="scoreText">Score 0</span>
+        <span class="score-pill" id="playedText">Played 0</span>
+        <span class="score-pill" id="bestText">Best 0</span>
+        <span class="score-pill" id="leftText">Left 0</span>
+        <span class="score-pill" id="triesText">Try 0/3</span>
+      </div>
+
+      <div class="action-row">
         <button class="secondary-btn" id="nextBtn">Next round</button>
         <button class="secondary-btn" id="resetBtn">Reset</button>
       </div>
