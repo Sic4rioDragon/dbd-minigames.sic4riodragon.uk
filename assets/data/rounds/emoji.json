@@ -1,0 +1,153 @@
+[
+  {
+    "id": "emoji_huntress_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "huntress",
+    "clue": "🪓 🎵 🌲",
+    "hints": [
+      "The middle emoji is not just decoration.",
+      "This killer is often known before she is seen."
+    ],
+    "answer": "Huntress",
+    "aliases": [
+      "the huntress",
+      "huntress",
+      "anna"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "emoji_onryo_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "onryo",
+    "clue": "📺 💀 🕯️",
+    "hints": [
+      "One of these emojis is part of her map pressure.",
+      "The danger spreads through something watched."
+    ],
+    "answer": "Onryo",
+    "aliases": [
+      "the onryo",
+      "onryo",
+      "sadako"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "emoji_trickster_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "trickster",
+    "clue": "🎤 🔪 ✨",
+    "hints": [
+      "The shine is part of the persona.",
+      "Performance and blades both matter."
+    ],
+    "answer": "Trickster",
+    "aliases": [
+      "the trickster",
+      "trickster",
+      "ji woon",
+      "ji-woon",
+      "ji woon hak",
+      "ji-woon hak"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "emoji_ghostface_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "ghostface",
+    "clue": "📞 🔪 👻",
+    "hints": [
+      "One emoji points more to the franchise than the power.",
+      "Stealth and a mask matter."
+    ],
+    "answer": "Ghost Face",
+    "aliases": [
+      "ghost face",
+      "ghostface",
+      "the ghost face",
+      "danny",
+      "jed"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "emoji_yui_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "yui",
+    "clue": "🏍️ 🏁 🔥",
+    "hints": [
+      "The first two emojis are more about her past than the trial.",
+      "She is tied to speed and independence."
+    ],
+    "answer": "Yui Kimura",
+    "aliases": [
+      "yui",
+      "yui kimura",
+      "kimura"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "emoji_mikaela_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "mikela",
+    "clue": "📖 🕯️ 🌙",
+    "hints": [
+      "This survivor feels more mystical than most.",
+      "Books and rituals fit her theme."
+    ],
+    "answer": "Mikaela Reid",
+    "aliases": [
+      "mikaela",
+      "mikela",
+      "reid",
+      "mikaela reid"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "emoji_feng_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "fengmin",
+    "clue": "🎮 🏆 🎧",
+    "hints": [
+      "Competition matters here.",
+      "Screens are part of her past."
+    ],
+    "answer": "Feng Min",
+    "aliases": [
+      "feng",
+      "min",
+      "feng min"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "emoji_nic_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "nicolascage",
+    "clue": "🎬 🐝 😱",
+    "hints": [
+      "The first emoji matters the most.",
+      "This one is tied to a real actor."
+    ],
+    "answer": "Nicolas Cage",
+    "aliases": [
+      "nicolas",
+      "cage",
+      "nicolas cage",
+      "nick cage"
+    ],
+    "isNew": true
+  }
+]

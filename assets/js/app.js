@@ -4,21 +4,29 @@ const MODE_TITLES = {
   emoji: "Emoji Guess",
   perk: "Perk Guess",
   quote: "Quote Guess",
-  lore: "Lore Guess",
-  terror: "Terror Radius Guess"
+  lore: "Lore Guess"
 };
 
 const MAX_TRIES = 3;
 
-let roundsByMode = {};
+let rounds = [];
 let currentMode = null;
 let currentRound = null;
 let roundQueue = [];
+let characterData = {
+  killers: [],
+  survivors: []
+};
+
 let score = 0;
 let played = 0;
 let bestScore = 0;
 let tries = 0;
 let roundLocked = false;
+
+function getRoot() {
+  return document.querySelector("[data-game-mode]");
+}
 
 function normalizeAnswer(value) {
   return String(value || "")
@@ -87,14 +95,70 @@ function saveBestScore() {
   localStorage.setItem(getBestKey(), String(bestScore));
 }
 
+function getTodayKey() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function getDoneKey() {
+  return `dbd-minigames-done-${getTodayKey()}-${currentMode}`;
+}
+
+function getDoneIds() {
+  try {
+    return JSON.parse(localStorage.getItem(getDoneKey()) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function saveDoneIds(ids) {
+  localStorage.setItem(getDoneKey(), JSON.stringify([...new Set(ids)]));
+}
+
+function markRoundDone(roundId) {
+  if (!roundId) return;
+
+  const ids = getDoneIds();
+  ids.push(roundId);
+  saveDoneIds(ids);
+}
+
+function clearDoneRounds() {
+  localStorage.removeItem(getDoneKey());
+}
+
 function resetQueue() {
-  const rounds = roundsByMode[currentMode] || [];
-  roundQueue = shuffleList(rounds);
+  const doneIds = new Set(getDoneIds());
+  const availableRounds = rounds.filter(round => !doneIds.has(round.id));
+
+  roundQueue = shuffleList(availableRounds);
+}
+
+function showAllDoneState() {
+  currentRound = null;
+  roundLocked = true;
+  tries = 0;
+
+  setText("clueText", "Everything done for this mode today.");
+  setText("helperText", "You finished every available round. Want to reset this mode and play them again?");
+
+  setInputLocked(true);
+
+  const next = document.getElementById("nextBtn");
+  if (next) next.disabled = true;
+
+  setResult("All rounds complete. Press Reset if you want to replay this mode.", "warning");
+  updateScore();
 }
 
 function pickRound() {
   if (!roundQueue.length) resetQueue();
-  return roundQueue.shift() || null;
+
+  if (!roundQueue.length) {
+    return null;
+  }
+
+  return roundQueue.shift();
 }
 
 function setText(id, value) {
@@ -104,7 +168,59 @@ function setText(id, value) {
 
 function getGameDataPath() {
   const root = document.querySelector("[data-game-mode]");
-  return root?.dataset.roundsPath || "../../assets/data/rounds.json";
+  return root?.dataset.roundsPath || "../../assets/data/rounds/classic.json";
+}
+
+function getSiteInfoPath() {
+  return getRoot() ? "../../assets/data/site.json" : "assets/data/site.json";
+}
+
+function getDbDAssetsBase() {
+  const root = getRoot();
+  return root?.dataset.dbdAssetsBase || "https://deadbydaylight.sic4riodragon.uk/";
+}
+
+function makeAbsoluteDbDUrl(path) {
+  if (!path) return "";
+  if (/^https?:\/\//i.test(path)) return path;
+
+  return new URL(path, getDbDAssetsBase()).href;
+}
+
+async function loadJsonSafe(path) {
+  if (!path) return null;
+
+  const response = await fetch(path);
+
+  if (!response.ok) {
+    throw new Error(`Could not load JSON from ${path}`);
+  }
+
+  return response.json();
+}
+
+async function loadSiteInfo() {
+  const versionEls = document.querySelectorAll("#siteVersion");
+  if (!versionEls.length) return;
+
+  try {
+    const response = await fetch(getSiteInfoPath());
+
+    if (!response.ok) {
+      throw new Error("Could not load site.json");
+    }
+
+    const info = await response.json();
+    const version = info.version || "v0.0.1";
+
+    versionEls.forEach(el => {
+      el.textContent = version;
+    });
+  } catch {
+    versionEls.forEach(el => {
+      el.textContent = "v0.0.1";
+    });
+  }
 }
 
 async function loadRoundData() {
@@ -115,39 +231,98 @@ async function loadRoundData() {
     throw new Error(`Could not load rounds from ${path}`);
   }
 
-  roundsByMode = await response.json();
+  const data = await response.json();
+
+  if (Array.isArray(data)) {
+    rounds = data;
+    return;
+  }
+
+  if (Array.isArray(data?.rounds)) {
+    rounds = data.rounds;
+    return;
+  }
+
+  throw new Error("Round JSON must be an array or contain a rounds array.");
 }
 
-function getSiteInfoPath() {
-  const root = document.querySelector("[data-game-mode]");
-  return root ? "../../assets/data/site.json" : "assets/data/site.json";
-}
+async function loadCharacterData() {
+  const root = getRoot();
+  if (!root) return;
 
-async function loadSiteInfo() {
-  const versionEl = document.getElementById("siteVersion");
-  if (!versionEl) return;
+  const killersPath = root.dataset.killersPath || "";
+  const survivorsPath = root.dataset.survivorsPath || "";
 
   try {
-    const response = await fetch(getSiteInfoPath());
+    const [killersJson, survivorsJson] = await Promise.all([
+      loadJsonSafe(killersPath),
+      loadJsonSafe(survivorsPath)
+    ]);
 
-    if (!response.ok) {
-      throw new Error("Could not load site.json");
-    }
-
-    const info = await response.json();
-    versionEl.textContent = info.version || "v0.0.1";
-  } catch {
-    versionEl.textContent = "v0.0.1";
+    characterData.killers = killersJson?.killers || [];
+    characterData.survivors = survivorsJson?.survivors || [];
+  } catch (error) {
+    console.warn("Could not load character data:", error);
+    characterData.killers = [];
+    characterData.survivors = [];
   }
 }
 
-function setResult(message, state) {
+function findCharacter(round) {
+  const type = String(round?.characterType || round?.type || "").toLowerCase();
+  const id = String(round?.characterId || "").toLowerCase();
+
+  if (!id) return null;
+
+  const list = type === "killer"
+    ? characterData.killers
+    : characterData.survivors;
+
+  return list.find(character => String(character.id || "").toLowerCase() === id) || null;
+}
+
+function getRoundImage(round) {
+  if (round?.image) return round.image;
+
+  const character = findCharacter(round);
+  if (!character?.img) return "";
+
+  return makeAbsoluteDbDUrl(character.img);
+}
+
+function buildResultHtml(message, state, round) {
+  const imageUrl = getRoundImage(round);
+
+  if (!roundLocked || !imageUrl) {
+    return `<span>${message}</span>`;
+  }
+
+  return `
+    <img class="result-portrait" src="${imageUrl}" alt="${round.answer}" />
+    <span>${message}</span>
+  `;
+}
+
+function setResult(message, state, withPortrait = false) {
   const result = document.getElementById("result");
   if (!result) return;
 
   result.classList.add("show");
-  result.textContent = message;
   result.dataset.state = state;
+
+  if (withPortrait) {
+    result.innerHTML = buildResultHtml(message, state, currentRound);
+  } else {
+    result.textContent = message;
+  }
+
+  const img = result.querySelector(".result-portrait");
+
+  if (img) {
+    img.onerror = () => {
+      img.remove();
+    };
+  }
 }
 
 function clearResult() {
@@ -189,46 +364,6 @@ function updatePageTitle() {
   document.title = `${title} - DBD Mini Games`;
 }
 
-function hideCharacterReveal() {
-  const reveal = document.getElementById("characterReveal");
-  const image = document.getElementById("characterImage");
-  const name = document.getElementById("characterName");
-
-  if (reveal) reveal.hidden = true;
-  if (image) {
-    image.removeAttribute("src");
-    image.alt = "";
-  }
-  if (name) name.textContent = "";
-}
-
-function showCharacterReveal() {
-  const reveal = document.getElementById("characterReveal");
-  const image = document.getElementById("characterImage");
-  const name = document.getElementById("characterName");
-
-  if (!reveal || !name) return;
-
-  name.textContent = currentRound.answer;
-
-  if (image && currentRound.image) {
-    image.src = currentRound.image;
-    image.alt = currentRound.answer;
-
-    image.onerror = () => {
-      image.removeAttribute("src");
-      image.alt = "";
-      image.style.display = "none";
-    };
-
-    image.onload = () => {
-      image.style.display = "";
-    };
-  }
-
-  reveal.hidden = false;
-}
-
 function getLastTryHint() {
   const hints = currentRound?.hints || [];
   if (!hints.length) return "";
@@ -242,8 +377,7 @@ function finishRound(message, state) {
 
   setInputLocked(true);
   setNextLocked(false);
-  showCharacterReveal();
-  setResult(message, state);
+  setResult(message, state, true);
   updateScore();
 }
 
@@ -262,18 +396,21 @@ function loadRound() {
   setInputLocked(false);
   setNextLocked(true);
   clearResult();
-  hideCharacterReveal();
 
   if (!currentRound) {
-    setText("clueText", "No rounds found for this mode yet.");
-    setText("helperText", "");
-    setInputLocked(true);
-    setNextLocked(true);
+    if (rounds.length) {
+      showAllDoneState();
+    } else {
+      setText("clueText", "No rounds found for this mode yet.");
+      setText("helperText", "");
+      setInputLocked(true);
+    }
+
     return;
   }
 
   setText("clueText", currentRound.clue);
-  setText("helperText", "");
+  setText("helperText", currentRound.isNew ? "New round." : "");
   updateScore();
 }
 
@@ -281,32 +418,55 @@ function checkAnswer() {
   if (!currentRound || roundLocked) return;
 
   const input = document.getElementById("answerInput");
-const rawGuess = input?.value || "";
-const guess = normalizeAnswer(rawGuess);
+  const rawGuess = input?.value || "";
+  const guess = normalizeAnswer(rawGuess);
 
-if (!guess) {
-  setResult("Type a guess first.", "warning");
-  return;
-}
+  if (!guess) {
+    setResult("Type a guess first.", "warning");
+    return;
+  }
 
-tries += 1;
+  tries += 1;
 
-const correct = isCorrectGuess(rawGuess, currentRound);
+  const correct = isCorrectGuess(rawGuess, currentRound);
 
-  if (correct) {
+ if (correct) {
     score += 1;
-    finishRound(`Correct. The answer was ${currentRound.answer}.`, "correct");
+    played += 1;
+    roundLocked = true;
+
+    markRoundDone(currentRound.id);
+
+    setInputLocked(true);
+    showCharacterReveal();
+    setResult(`Correct. The answer was ${currentRound.answer}.`, "correct");
+    updateScore();
     return;
   }
 
   if (tries >= MAX_TRIES) {
-    finishRound(`Out of tries. The answer was ${currentRound.answer}.`, "wrong");
+    played += 1;
+    roundLocked = true;
+
+    markRoundDone(currentRound.id);
+
+    setInputLocked(true);
+    showCharacterReveal();
+    setResult(`Out of tries. The answer was ${currentRound.answer}.`, "wrong");
+    updateScore();
     return;
   }
 
   const triesLeft = MAX_TRIES - tries;
 
-  if (triesLeft === 1) {
+  const earlyHint = currentRound.hintAfterTry === tries
+    ? currentRound.hints?.[0] || ""
+    : "";
+
+  if (earlyHint) {
+    setText("helperText", earlyHint);
+    setResult(`Wrong. ${triesLeft} ${triesLeft === 1 ? "try" : "tries"} left.`, "warning");
+  } else if (triesLeft === 1) {
     const hint = getLastTryHint();
     if (hint) setText("helperText", hint);
     setResult("Wrong. Last try left.", "warning");
@@ -327,19 +487,22 @@ function resetRun() {
   played = 0;
   tries = 0;
   roundLocked = false;
+
+  clearDoneRounds();
   resetQueue();
   loadRound();
   updateScore();
 }
 
 async function initGamePage() {
-  const root = document.querySelector("[data-game-mode]");
+  const root = getRoot();
   if (!root) return;
 
   currentMode = root.dataset.gameMode;
 
   try {
     await loadRoundData();
+    await loadCharacterData();
   } catch (error) {
     console.error(error);
     setText("modeTitle", "DBD Mini Game");
@@ -377,3 +540,68 @@ document.addEventListener("DOMContentLoaded", () => {
   loadSiteInfo();
   initGamePage();
 });
+
+function getDbDAssetsBase() {
+  const root = document.querySelector("[data-game-mode]");
+  return root?.dataset.dbdAssetsBase || "https://deadbydaylight.sic4riodragon.uk/";
+}
+
+function makeAbsoluteDbDUrl(path) {
+  if (!path) return "";
+  if (/^https?:\/\//i.test(path)) return path;
+
+  return new URL(path, getDbDAssetsBase()).href;
+}
+
+async function loadJsonSafe(path) {
+  if (!path) return null;
+
+  const response = await fetch(path);
+
+  if (!response.ok) {
+    throw new Error(`Could not load JSON from ${path}`);
+  }
+
+  return response.json();
+}
+
+async function loadCharacterData() {
+  const root = document.querySelector("[data-game-mode]");
+  if (!root) return;
+
+  try {
+    const [killersJson, survivorsJson] = await Promise.all([
+      loadJsonSafe(root.dataset.killersPath),
+      loadJsonSafe(root.dataset.survivorsPath)
+    ]);
+
+    characterData.killers = killersJson?.killers || [];
+    characterData.survivors = survivorsJson?.survivors || [];
+  } catch (error) {
+    console.warn("Could not load character data:", error);
+    characterData.killers = [];
+    characterData.survivors = [];
+  }
+}
+
+function findCharacter(round) {
+  const type = String(round?.characterType || round?.type || "").toLowerCase();
+  const id = String(round?.characterId || "").toLowerCase();
+
+  if (!id) return null;
+
+  const list = type === "killer"
+    ? characterData.killers
+    : characterData.survivors;
+
+  return list.find(character => String(character.id || "").toLowerCase() === id) || null;
+}
+
+function getRoundImage(round) {
+  if (round?.image) return round.image;
+
+  const character = findCharacter(round);
+  if (!character?.img) return "";
+
+  return makeAbsoluteDbDUrl(character.img);
+}

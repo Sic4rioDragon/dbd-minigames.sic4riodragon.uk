@@ -1,0 +1,331 @@
+[
+  {
+    "id": "classic_yui_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "yui",
+    "clue": "A survivor shaped by speed, pressure, and refusing to follow the path chosen for her.",
+    "hints": [
+      "Her past is tied to engines and independence.",
+      "Family expectations are a big part of her story."
+    ],
+    "answer": "Yui Kimura",
+    "aliases": [
+      "yui",
+      "yui kimura",
+      "kimura"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_yunjin_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "yunjinlee",
+    "clue": "A survivor who learned how dangerous ambition can become when fame matters more than people.",
+    "hints": [
+      "Her life was tied to the music industry.",
+      "She stood close to someone who became much worse."
+    ],
+    "answer": "Yun Jin Lee",
+    "aliases": [
+      "yun",
+      "jin",
+      "lee",
+      "yun jin",
+      "yun-jin",
+      "yun jin lee",
+      "yun-jin lee",
+      "yunjin",
+      "yunjinlee"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_nea_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "neakarlsson",
+    "clue": "A survivor who moves like rules were only ever suggestions.",
+    "hints": [
+      "Her style feels restless and city-born.",
+      "She was one of the earlier post-launch survivors."
+    ],
+    "answer": "Nea Karlsson",
+    "aliases": [
+      "nea",
+      "nea karlsson",
+      "karlsson"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_feng_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "fengmin",
+    "clue": "A survivor whose confidence came from screens, pressure, and needing to prove she could win.",
+    "hints": [
+      "Her background is tied to competition.",
+      "She is strongly connected to gaming."
+    ],
+    "answer": "Feng Min",
+    "aliases": [
+      "feng",
+      "min",
+      "feng min"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_mikaela_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "mikela",
+    "clue": "A survivor drawn to stories, rituals, and old beliefs most people would ignore.",
+    "hints": [
+      "Her theme leans mystical.",
+      "Her gameplay impact is tied to Boons."
+    ],
+    "answer": "Mikaela Reid",
+    "aliases": [
+      "mikaela",
+      "mikela",
+      "reid",
+      "mikaela reid"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_dwight_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "dwightfairfield",
+    "clue": "A survivor who does not look like a natural leader, but keeps ending up in that role anyway.",
+    "hints": [
+      "His perks are heavily team-focused.",
+      "He is one of the original survivors."
+    ],
+    "answer": "Dwight Fairfield",
+    "aliases": [
+      "dwight",
+      "fairfield",
+      "dwight fairfield"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_meg_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "megthomas",
+    "clue": "A survivor built around speed, escape, and pushing herself further than she probably should.",
+    "hints": [
+      "Her perks are very chase-friendly.",
+      "Running is one of her strongest themes."
+    ],
+    "answer": "Meg Thomas",
+    "aliases": [
+      "meg",
+      "thomas",
+      "meg thomas"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_trickster_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "trickster",
+    "clue": "A killer who turned attention, performance, and applause into something sharp.",
+    "hints": [
+      "His style is bright and polished.",
+      "His fame is part of what makes him dangerous."
+    ],
+    "answer": "Trickster",
+    "aliases": [
+      "the trickster",
+      "trickster",
+      "ji woon",
+      "ji-woon",
+      "ji woon hak",
+      "ji-woon hak",
+      "hak"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_onryo_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "onryo",
+    "clue": "A killer whose presence makes ordinary technology feel cursed.",
+    "hints": [
+      "Survivors can carry something connected to her power.",
+      "Screens are one of the biggest signs."
+    ],
+    "answer": "Onryo",
+    "aliases": [
+      "the onryo",
+      "onryo",
+      "sadako",
+      "sadako yamamura"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_huntress_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "huntress",
+    "clue": "A killer who can make distance feel unsafe long before she reaches you.",
+    "hints": [
+      "Sound gives her away before a normal chase starts.",
+      "Her power rewards aim."
+    ],
+    "answer": "Huntress",
+    "aliases": [
+      "the huntress",
+      "huntress",
+      "anna"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_ghostface_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "ghostface",
+    "clue": "A killer who turns observation into control, but can lose power when watched back.",
+    "hints": [
+      "Stealth and exposure are central.",
+      "The mask is one of the easiest signs."
+    ],
+    "answer": "Ghost Face",
+    "aliases": [
+      "ghost face",
+      "ghostface",
+      "the ghost face",
+      "danny",
+      "jed",
+      "jed olsen"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_pig_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "pig",
+    "clue": "A killer who can make survivors waste time and second-guess themselves before the real chase even starts.",
+    "hints": [
+      "Her pressure is tied to a second objective placed on survivors.",
+      "The traps are not on the ground."
+    ],
+    "answer": "Pig",
+    "aliases": [
+      "the pig",
+      "pig",
+      "amanda",
+      "amanda young"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_nurse_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "nurse",
+    "clue": "A killer who can make the whole map feel unsafe through teleportation and unpredictability.",
+    "hints": [
+      "She can bypass normal routes and obstacles.",
+      "Her power is tied to blinking through space."
+    ],
+    "answer": "Nurse",
+    "aliases": [
+      "the nurse",
+      "nurse",
+      "sally",
+      "sally smithson"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_clown_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "clown",
+    "clue": "A killer who can make the whole map feel unsafe through unpredictable traps and pressure.",
+    "hints": [
+      "His power is tied to throwing bottles that affect survivors.",
+      "The traps can cause a variety of problems."
+    ],
+    "answer": "Clown",
+    "aliases": [
+      "the clown",
+      "clown",
+      "jeffrey",
+      "jeffrey hawk"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_spirit_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "spirit",
+    "clue": "A killer who can make a chase feel like a guessing game where sight is not always enough.",
+    "hints": [
+      "She can become invisible and move quickly.",
+      "Her power is tied to her connection to the spirit world."
+    ],
+    "answer": "Spirit",
+    "aliases": [
+      "the spirit",
+      "spirit",
+      "rin",
+      "rin yamaoka"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "classic_legion_001",
+    "type": "killer",
+    "clue": "A killer identity built around a group, shared violence, and the kind of chaos that spreads fast.",
+    "hints": [
+      "The mask is not always the same face.",
+      "Their pressure comes from moving quickly between people."
+    ],
+    "answer": "Legion",
+    "aliases": [
+      "the legion",
+      "legion",
+      "frank",
+      "julie",
+      "susie",
+      "joey"
+    ],
+    "isNew": true,
+    "characterType": "killer",
+    "characterId": "legion"
+  },
+  {
+    "id": "classic_artist_001",
+    "type": "killer",
+    "clue": "A killer whose pain, expression, and black-winged imagery became something the Fog could twist.",
+    "hints": [
+      "Her power reaches across distance.",
+      "Her theme is tied to ink, birds, and grief."
+    ],
+    "answer": "Artist",
+    "aliases": [
+      "the artist",
+      "artist",
+      "carmina",
+      "carmina mora"
+    ],
+    "isNew": true,
+    "characterType": "killer",
+    "characterId": "artist"
+  }
+]

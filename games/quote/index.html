@@ -9,11 +9,14 @@
   <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 <body>
-  <main
-    class="game-page"
-    data-game-mode="quote"
-    data-rounds-path="../../assets/data/rounds.json"
-  >
+<main
+  class="game-page"
+  data-game-mode="classic"
+  data-rounds-path="../../assets/data/rounds/quote.json"
+  data-killers-path="https://deadbydaylight.sic4riodragon.uk/killers.json"
+  data-survivors-path="https://deadbydaylight.sic4riodragon.uk/survivors.json"
+  data-dbd-assets-base="https://deadbydaylight.sic4riodragon.uk/"
+>
     <section class="play-panel compact-panel">
       <div class="top-row">
         <a class="back-link" href="../../">← Back home</a>
@@ -34,14 +37,6 @@
       </div>
 
       <div class="result-box" id="result"></div>
-
-      <div class="character-reveal" id="characterReveal" hidden>
-        <img id="characterImage" alt="" />
-        <div>
-          <p class="reveal-label">Revealed answer</p>
-          <p class="reveal-name" id="characterName"></p>
-        </div>
-      </div>
 
       <div class="score-row compact-score">
         <span class="score-pill" id="scoreText">Score 0</span>

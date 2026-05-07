@@ -1,0 +1,120 @@
+[
+  {
+    "id": "quote_entity_001",
+    "type": "quote",
+    "clue": "\"Death is not an escape.\"",
+    "hints": [
+      "This is not a normal playable character.",
+      "It is bigger than the killers."
+    ],
+    "answer": "The Entity",
+    "aliases": [
+      "entity",
+      "the entity"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "quote_saw_001",
+    "type": "quote",
+    "characterType": "killer",
+    "characterId": "pig",
+    "clue": "\"I want to play a game.\"",
+    "hints": [
+      "This is tied to a licensed chapter.",
+      "The trial version uses traps in a very specific way."
+    ],
+    "answer": "Pig",
+    "aliases": [
+      "the pig",
+      "pig",
+      "amanda",
+      "amanda young"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "quote_perk_001",
+    "type": "quote",
+    "clue": "\"This isn't happening.\"",
+    "hintAfterTry": 1,
+    "hints": [
+      "This is a trick question.",
+      "The answer is a survivor perk, not a character."
+    ],
+    "answer": "This Is Not Happening",
+    "aliases": [
+      "this is not happening"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "quote_nightmare_001",
+    "type": "quote",
+    "characterType": "killer",
+    "characterId": "nightmare",
+    "clue": "\"Welcome to my world.\"",
+    "hints": [
+      "This is tied to a licensed killer.",
+      "Dreams are the important clue."
+    ],
+    "answer": "Nightmare",
+    "aliases": [
+      "the nightmare",
+      "nightmare",
+      "freddy",
+      "freddy krueger"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "quote_ash_001",
+    "type": "quote",
+    "characterType": "survivor",
+    "characterId": "ashleyjwilliams",
+    "clue": "\"Groovy.\"",
+    "hints": [
+      "This is tied to a licensed survivor.",
+      "Chainsaw hand energy."
+    ],
+    "answer": "Ashley J Williams",
+    "aliases": [
+      "ash",
+      "ashley",
+      "ash williams",
+      "ashley j williams"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "quote_nic_001",
+    "type": "quote",
+    "characterType": "survivor",
+    "characterId": "nicolascage",
+    "clue": "\"The hell?\"",
+    "hints": [
+      "This is tied to a celebrity survivor.",
+      "The answer is the actor's character in DbD."
+    ],
+    "answer": "Nicolas Cage",
+    "aliases": [
+      "nicolas",
+      "cage",
+      "nicolas cage",
+      "nick cage"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "quote_artist_001",
+    "type": "quote",
+    "characterType": "survivor",
+    "characterId": "carmina",
+    "clue": "\"I see things differently now.\"",
+    "hints": [
+      "This survivor's name is tied to creativity.",
+      "She has a unique visual style in the game."
+    ],
+    "isNew": true
+  }
+]

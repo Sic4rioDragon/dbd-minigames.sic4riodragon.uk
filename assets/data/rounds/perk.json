@@ -1,0 +1,120 @@
+[
+  {
+    "id": "perk_lithe_001",
+    "type": "perk",
+    "clue": "A fast movement reward after using the environment well.",
+    "hints": [
+      "It is tied to a rushed vault.",
+      "It is an exhaustion perk."
+    ],
+    "answer": "Lithe",
+    "aliases": [
+      "lithe"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "perk_merciless_storm_001",
+    "type": "perk",
+    "clue": "A late-generator mistake can suddenly make progress feel much less safe.",
+    "hints": [
+      "It appears when a generator is close to done.",
+      "It creates a chain of difficult skill checks."
+    ],
+    "answer": "Merciless Storm",
+    "aliases": [
+      "merciless storm"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "perk_head_on_001",
+    "type": "perk",
+    "clue": "A hiding place becomes a weapon if the timing is right.",
+    "hints": [
+      "It needs a locker.",
+      "It can stun the killer."
+    ],
+    "answer": "Head On",
+    "aliases": [
+      "head on",
+      "head-on"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "perk_noed_001",
+    "type": "perk",
+    "clue": "The endgame suddenly becomes much more dangerous if a certain dull object survived.",
+    "hints": [
+      "It is a Hex perk.",
+      "Survivors often shorten its name."
+    ],
+    "answer": "No One Escapes Death",
+    "aliases": [
+      "no one escapes death",
+      "noed",
+      "hex no one escapes death",
+      "hex: no one escapes death"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "perk_windows_001",
+    "type": "perk",
+    "clue": "The map becomes easier to read when you are looking for places to loop.",
+    "hints": [
+      "It shows useful chase resources.",
+      "Vaults and pallets are the important objects."
+    ],
+    "answer": "Windows of Opportunity",
+    "aliases": [
+      "windows of opportunity",
+      "windows"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "perk_starstruck_001",
+    "type": "perk",
+    "clue": "Being too close while someone is carried can suddenly make you much easier to punish.",
+    "hints": [
+      "It is a killer perk.",
+      "The exposed effect is the important part."
+    ],
+    "answer": "Starstruck",
+    "aliases": [
+      "starstruck"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "perk_this_is_not_happening_001",
+    "type": "perk",
+    "clue": "This isn't happening.",
+    "hintAfterTry": 1,
+    "hints": [
+      "This is a trick question.",
+      "The answer is a survivor perk, not a character."
+    ],
+    "answer": "This Is Not Happening",
+    "aliases": [
+      "this is not happening"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "perk_alert_001",
+    "type": "perk",
+    "clue": "A damaged object can turn into information about where the killer is.",
+    "hints": [
+      "This perk rewards paying attention to killer actions.",
+      "Generator kicks are one of the main triggers."
+    ],
+    "answer": "Alert",
+    "aliases": [
+      "alert"
+    ],
+    "isNew": true
+  }
+]

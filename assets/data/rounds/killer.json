@@ -1,0 +1,210 @@
+[
+  {
+    "id": "killer_huntress_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "huntress",
+    "clue": "This killer can punish survivors from far away if they move too predictably.",
+    "hints": [
+      "Her audio presence is very recognizable.",
+      "Her power is thrown, not placed."
+    ],
+    "answer": "Huntress",
+    "aliases": [
+      "the huntress",
+      "huntress",
+      "anna"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_nurse_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "nurse",
+    "clue": "This killer does not respect loops in the way most killers have to.",
+    "hints": [
+      "Walls are less reliable against her.",
+      "Her power is movement-based, but not a dash."
+    ],
+    "answer": "Nurse",
+    "aliases": [
+      "the nurse",
+      "nurse",
+      "sally",
+      "sally smithson"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_spirit_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "spirit",
+    "clue": "This killer can make a chase feel like a guessing game where sight is not always enough.",
+    "hints": [
+      "Audio and scratch marks matter a lot against her.",
+      "Her story is tied to the Yamaoka family."
+    ],
+    "answer": "Spirit",
+    "aliases": [
+      "the spirit",
+      "spirit",
+      "rin",
+      "rin yamaoka"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_pig_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "pig",
+    "clue": "This killer can make survivors waste precious time before the real chase even matters.",
+    "hints": [
+      "Her pressure is tied to a second objective placed on survivors.",
+      "The traps are not on the ground."
+    ],
+    "answer": "Pig",
+    "aliases": [
+      "the pig",
+      "pig",
+      "amanda",
+      "amanda young"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_nightmare_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "nightmare",
+    "clue": "This killer makes the trial feel less reliable once survivors are pulled into his world.",
+    "hints": [
+      "Sleep matters.",
+      "His power is tied to dreams."
+    ],
+    "answer": "Nightmare",
+    "aliases": [
+      "the nightmare",
+      "nightmare",
+      "freddy",
+      "freddy krueger"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_trickster_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "trickster",
+    "clue": "This killer treats violence like a show and the trial like a stage.",
+    "hints": [
+      "His weapon pressure comes in many small hits.",
+      "His style is tied to bright performance and fame."
+    ],
+    "answer": "Trickster",
+    "aliases": [
+      "the trickster",
+      "trickster",
+      "ji woon",
+      "ji-woon",
+      "ji woon hak",
+      "ji-woon hak"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_artist_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "artist",
+    "clue": "This killer can pressure survivors from far away through something dark, loud, and hard to ignore.",
+    "hints": [
+      "Her power is good at checking generators from distance.",
+      "Bird imagery is the key."
+    ],
+    "answer": "Artist",
+    "aliases": [
+      "the artist",
+      "artist",
+      "carmina",
+      "carmina mora"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_first_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "first",
+    "clue": "This killer feels old, powerful, and tied to something much stranger than a normal chase.",
+    "hints": [
+      "Their design leans supernatural and ancient.",
+      "This is one of your newer owned killers."
+    ],
+    "answer": "The First",
+    "aliases": [
+      "the first",
+      "first"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_animatronic_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "animatronic",
+    "clue": "This killer turns machinery, performance, and something not-quite-human into fear.",
+    "hints": [
+      "The name itself hints at what it is.",
+      "Think horror built around a moving machine."
+    ],
+    "answer": "Animatronic",
+    "aliases": [
+      "the animatronic",
+      "animatronic"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_onryo_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "onryo",
+    "clue": "This killer's presence can make ordinary technology feel cursed.",
+    "hints": [
+      "Survivors can carry something connected to her power.",
+      "Screens are one of the biggest signs."
+    ],
+    "answer": "Onryo",
+    "aliases": [
+      "the onryo",
+      "onryo",
+      "sadako",
+      "sadako yamamura"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "killer_legion_001",
+    "type": "killer",
+    "clue": "This killer is not really one person, even if only one body is chasing you at a time.",
+    "hints": [
+      "Their pressure gets worse when survivors are grouped up.",
+      "Their identity is shared between several names."
+    ],
+    "answer": "Legion",
+    "aliases": [
+      "the legion",
+      "legion",
+      "frank",
+      "julie",
+      "susie",
+      "joey"
+    ],
+    "isNew": true,
+    "characterType": "killer",
+    "characterId": "legion"
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "id": "lore_trickster_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "trickster",
+    "clue": "A performer whose hunger for attention slowly became impossible to separate from cruelty.",
+    "hints": [
+      "His public image mattered a lot.",
+      "Music and blades both fit him."
+    ],
+    "answer": "Trickster",
+    "aliases": [
+      "the trickster",
+      "trickster",
+      "ji woon",
+      "ji-woon",
+      "ji woon hak",
+      "ji-woon hak"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "lore_yui_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "yui",
+    "clue": "A survivor pushed by expectations, but drawn toward speed, risk, and proving herself on her own terms.",
+    "hints": [
+      "Her story has strong independence themes.",
+      "Racing is part of her background."
+    ],
+    "answer": "Yui Kimura",
+    "aliases": [
+      "yui",
+      "yui kimura",
+      "kimura"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "lore_artist_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "artist",
+    "clue": "A creator marked by grief and violence, whose expression became inseparable from black-winged imagery.",
+    "hints": [
+      "Her story is tied to art and trauma.",
+      "Birds are the strongest symbol."
+    ],
+    "answer": "Artist",
+    "aliases": [
+      "the artist",
+      "artist",
+      "carmina",
+      "carmina mora"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "lore_onryo_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "onryo",
+    "clue": "A death wrapped in fear, water, and a curse that continues through something people should not watch.",
+    "hints": [
+      "Her story is tied to a tape.",
+      "Her presence spreads through screens."
+    ],
+    "answer": "Onryo",
+    "aliases": [
+      "the onryo",
+      "onryo",
+      "sadako",
+      "sadako yamamura"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "lore_pig_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "pig",
+    "clue": "A killer shaped by tests, punishment, and the belief that suffering can reveal who deserves to live.",
+    "hints": [
+      "Her trial pressure is tied to a timed trap.",
+      "Her story comes from a licensed horror series."
+    ],
+    "answer": "Pig",
+    "aliases": [
+      "the pig",
+      "pig",
+      "amanda",
+      "amanda young"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "lore_spirit_001",
+    "type": "killer",
+    "characterType": "killer",
+    "characterId": "spirit",
+    "clue": "A life destroyed by family violence became something furious, broken, and impossible to fully see.",
+    "hints": [
+      "Her power makes reading her position difficult.",
+      "Her story is tied to the Yamaoka family."
+    ],
+    "answer": "Spirit",
+    "aliases": [
+      "the spirit",
+      "spirit",
+      "rin",
+      "rin yamaoka"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "lore_dwight_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "dwightfairfield",
+    "clue": "A survivor who never seemed built for leadership, but the Fog still placed others around him.",
+    "hints": [
+      "His perks help the team.",
+      "He is one of the original survivors."
+    ],
+    "answer": "Dwight Fairfield",
+    "aliases": [
+      "dwight",
+      "fairfield",
+      "dwight fairfield"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "lore_sable_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "sableward",
+    "clue": "A survivor who feels comfortable around darker aesthetics and places most people would avoid.",
+    "hints": [
+      "Her vibe fits the basement better than most.",
+      "She is closely associated with a newer survivor era."
+    ],
+    "answer": "Sable Ward",
+    "aliases": [
+      "sable",
+      "ward",
+      "sable ward"
+    ],
+    "isNew": true
+  },
+  {
+    "id": "lore_mikaela_001",
+    "type": "survivor",
+    "characterType": "survivor",
+    "characterId": "mikela",
+    "clue": "A survivor whose life was shaped by trauma, but who found a way to express herself through something mystical and creative.",
+    "hints": [
+      "Her story is tied to art and trauma.",
+      "Boons are a big part of her gameplay and identity."
+    ],
+    "answer": "Mikaela Reid",
+    "aliases": [
+      "mikaela",
+      "mikela",
+      "reid",
+      "mikaela reid"
+    ],
+    "isNew": true
+  }
+]
