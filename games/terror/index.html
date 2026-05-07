@@ -3,58 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DBD Mini Games</title>
+  <title>Terror Radius Guess - DBD Mini Games</title>
   <link rel="icon" type="image/png" href="https://sic4riodragon.uk/assets/SicarioDragon.png" />
   <link rel="apple-touch-icon" href="https://sic4riodragon.uk/assets/SicarioDragon.png" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 <body>
-  <main
-    class="game-page"
-    data-game-mode="terror"
-    data-rounds-path="../../assets/data/rounds.json"
-  >
-    <section class="play-panel compact-panel">
+  <main class="game-page">
+    <section class="play-panel under-dev">
       <div class="top-row">
         <a class="back-link" href="../../">← Back home</a>
-        <span class="mode-label">Demo Mode</span>
+        <span class="mode-label">Under Dev · <span id="siteVersion">v0.0.1</span></span>
       </div>
 
-      <h1 id="modeTitle">Loading...</h1>
+      <h1>Terror Radius Guess</h1>
 
-      <div class="clue-box compact-clue">
-        <p class="clue-title">Clue</p>
-        <p class="clue-text" id="clueText">Loading...</p>
-        <p class="helper-text" id="helperText"></p>
+      <div class="clue-box">
+        <p class="clue-title">Coming later</p>
+        <p class="clue-text">
+          This mode will use terror radius and chase audio clips.
+        </p>
+        <p class="helper-text">
+          The planned version will include an audio player and pause/play controls.
+        </p>
       </div>
 
-      <div class="answer-row">
-        <input class="answer-input" id="answerInput" placeholder="Type your guess..." autocomplete="off" />
-        <button id="submitBtn">Submit</button>
-      </div>
-
-      <div class="result-box" id="result"></div>
-
-      <div class="character-reveal" id="characterReveal" hidden>
-        <img id="characterImage" alt="" />
-        <div>
-          <p class="reveal-label">Revealed answer</p>
-          <p class="reveal-name" id="characterName"></p>
-        </div>
-      </div>
-
-      <div class="score-row compact-score">
-        <span class="score-pill" id="scoreText">Score 0</span>
-        <span class="score-pill" id="playedText">Played 0</span>
-        <span class="score-pill" id="bestText">Best 0</span>
-        <span class="score-pill" id="leftText">Left 0</span>
-        <span class="score-pill" id="triesText">Try 0/3</span>
-      </div>
-
-      <div class="action-row">
-        <button class="secondary-btn" id="nextBtn">Next round</button>
-        <button class="secondary-btn" id="resetBtn">Reset</button>
-      </div>
+      <a class="back-link" href="../../">Back to all mini games</a>
     </section>
   </main>
 

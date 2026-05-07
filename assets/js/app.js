@@ -118,12 +118,17 @@ async function loadRoundData() {
   roundsByMode = await response.json();
 }
 
+function getSiteInfoPath() {
+  const root = document.querySelector("[data-game-mode]");
+  return root ? "../../assets/data/site.json" : "assets/data/site.json";
+}
+
 async function loadSiteInfo() {
   const versionEl = document.getElementById("siteVersion");
   if (!versionEl) return;
 
   try {
-    const response = await fetch("assets/data/site.json");
+    const response = await fetch(getSiteInfoPath());
 
     if (!response.ok) {
       throw new Error("Could not load site.json");

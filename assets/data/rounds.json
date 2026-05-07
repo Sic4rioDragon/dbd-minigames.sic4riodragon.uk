@@ -3,50 +3,98 @@
     {
       "id": "classic_yui_001",
       "type": "survivor",
-      "clue": "A survivor connected to motorcycles, racing, and rebellious street style.",
+      "clue": "A survivor shaped by street races, engines, and refusing to stay in the lane chosen for her.",
       "hints": [
-        "This survivor is from the Cursed Legacy chapter.",
-        "Her first name is Yui."
+        "She is tied to speed, independence, and a very stubborn sense of freedom.",
+        "Her story has a lot of pressure from family expectations."
       ],
       "answer": "Yui Kimura",
-      "aliases": ["yui", "yui kimura"],
+      "aliases": ["yui", "yui kimura", "kimura"],
       "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/1/13/S20_YuiKimura_Portrait.png"
     },
     {
       "id": "classic_yunjin_001",
       "type": "survivor",
-      "clue": "A survivor connected to fame, music production, and the All-Kill chapter.",
+      "clue": "A survivor who learned how dangerous ambition can become when fame matters more than people.",
       "hints": [
-        "She worked in the music industry.",
-        "She worked with Ji-Woon Hak."
+        "Her story is tied to the music industry.",
+        "She stood very close to a rising star who became something much worse."
       ],
       "answer": "Yun-Jin Lee",
-      "aliases": ["yun jin", "yun-jin", "yun-jin lee", "yunjin"],
+      "aliases": ["yun", "jin", "lee", "yun jin", "yun-jin", "yun-jin lee", "yunjin"],
       "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/8/87/S22_YunJinLee_Portrait.png"
     },
     {
       "id": "classic_nea_001",
       "type": "survivor",
-      "clue": "A survivor tied to street art, urban movement, and a rebellious lifestyle.",
+      "clue": "A survivor with a restless streak, a talent for slipping through places, and no interest in behaving.",
       "hints": [
-        "She is from the Last Breath chapter.",
-        "Her first name is Nea."
+        "Her style feels more city than wilderness.",
+        "She is one of the older survivor additions."
       ],
       "answer": "Nea Karlsson",
-      "aliases": ["nea", "nea karlsson"],
+      "aliases": ["nea", "nea karlsson", "karlsson"],
       "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/e/e6/S05_NeaKarlsson_Portrait.png"
+    },
+    {
+      "id": "classic_feng_001",
+      "type": "survivor",
+      "clue": "A survivor whose confidence came from competition, screens, and proving she could win.",
+      "hints": [
+        "Her background is tied to gaming and pressure to perform.",
+        "She has one of the most recognizable cosmetic collections."
+      ],
+      "answer": "Feng Min",
+      "aliases": ["feng", "min", "feng min"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/7/7c/S07_FengMin_Portrait.png"
+    },
+    {
+      "id": "classic_mikaela_001",
+      "type": "survivor",
+      "clue": "A survivor drawn to stories, rituals, and something a little more mystical than most people around her understood.",
+      "hints": [
+        "Her identity is strongly tied to books and witchy themes.",
+        "She brought a new kind of survivor power into the game."
+      ],
+      "answer": "Mikaela Reid",
+      "aliases": ["mikaela", "reid", "mikaela reid"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/6/6f/S24_MikaelaReid_Portrait.png"
     },
     {
       "id": "classic_trickster_001",
       "type": "killer",
-      "clue": "A killer connected to fame, music, neon style, and knives.",
+      "clue": "A killer who turned attention, performance, and applause into something sharp and cruel.",
       "hints": [
-        "He is from the All-Kill chapter.",
-        "His real name is Ji-Woon Hak."
+        "His style is bright, loud, and polished.",
+        "His fame is part of what makes him dangerous."
       ],
       "answer": "Trickster",
-      "aliases": ["the trickster", "trickster", "ji-woon", "ji woon", "ji-woon hak"],
+      "aliases": ["the trickster", "trickster", "ji-woon", "ji woon", "ji-woon hak", "hak"],
       "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/c9/K23_TheTrickster_Portrait.png"
+    },
+    {
+      "id": "classic_legion_001",
+      "type": "killer",
+      "clue": "A killer identity built around a group, shared violence, and the kind of chaos that spreads fast.",
+      "hints": [
+        "The mask is not always the same face.",
+        "Their pressure comes from moving quickly between people."
+      ],
+      "answer": "Legion",
+      "aliases": ["the legion", "legion", "frank", "julie", "susie", "joey"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/53/K14_TheLegion_Portrait.png"
+    },
+    {
+      "id": "classic_artist_001",
+      "type": "killer",
+      "clue": "A killer whose pain, expression, and black-winged imagery became something the Fog could twist.",
+      "hints": [
+        "Her power reaches across distance.",
+        "Her theme is tied to ink, birds, and grief."
+      ],
+      "answer": "Artist",
+      "aliases": ["the artist", "artist", "carmina", "carmina mora"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/03/K26_TheArtist_Portrait.png"
     }
   ],
 
@@ -54,10 +102,10 @@
     {
       "id": "killer_legion_001",
       "type": "killer",
-      "clue": "This killer is more than one person, but the trial only shows one at a time.",
+      "clue": "This killer is not really one person, even if only one body is chasing you at a time.",
       "hints": [
-        "Their power is tied to chaining injuries.",
-        "Frank, Julie, Susie, and Joey."
+        "Their pressure gets worse when survivors are grouped up.",
+        "Their identity is shared between several names."
       ],
       "answer": "Legion",
       "aliases": ["the legion", "legion", "frank", "julie", "susie", "joey"],
@@ -66,14 +114,50 @@
     {
       "id": "killer_trickster_001",
       "type": "killer",
-      "clue": "This killer turns performance and attention into something deadly.",
+      "clue": "This killer treats violence like a show and the trial like a stage.",
       "hints": [
-        "He is connected to the All-Kill chapter.",
-        "He throws knives."
+        "His weapon pressure comes in many small hits.",
+        "His style is tied to bright performance and fame."
       ],
       "answer": "Trickster",
-      "aliases": ["the trickster", "trickster", "ji woon", "ji-woon", "ji-woon hak"],
+      "aliases": ["the trickster", "trickster", "ji woon", "ji-woon", "ji-woon hak", "hak"],
       "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/c9/K23_TheTrickster_Portrait.png"
+    },
+    {
+      "id": "killer_onryo_001",
+      "type": "killer",
+      "clue": "This killer makes the map feel unsafe through cursed objects that survivors cannot ignore forever.",
+      "hints": [
+        "Her pressure is tied to something survivors can carry.",
+        "Screens are part of her identity."
+      ],
+      "answer": "Onryo",
+      "aliases": ["the onryo", "onryo", "sadako", "sadako yamamura"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/f/fc/K27_TheOnryo_Portrait.png"
+    },
+    {
+      "id": "killer_huntress_001",
+      "type": "killer",
+      "clue": "This killer can turn distance into danger, especially when survivors think a wall makes them safe.",
+      "hints": [
+        "Her presence can be heard before a normal chase starts.",
+        "Her aim matters more than most killers."
+      ],
+      "answer": "Huntress",
+      "aliases": ["the huntress", "huntress", "anna"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/d/d8/K08_TheHuntress_Portrait.png"
+    },
+    {
+      "id": "killer_artist_001",
+      "type": "killer",
+      "clue": "This killer can pressure survivors from far away through something that feels alive, dark, and loud.",
+      "hints": [
+        "Her power is good at checking generators from distance.",
+        "Bird imagery is the key."
+      ],
+      "answer": "Artist",
+      "aliases": ["the artist", "artist", "carmina", "carmina mora"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/03/K26_TheArtist_Portrait.png"
     }
   ],
 
@@ -83,22 +167,60 @@
       "type": "killer",
       "clue": "🪓 🎵 🌲",
       "hints": [
-        "The audio clue matters a lot.",
-        "She hums a lullaby."
+        "The middle emoji is not just decoration.",
+        "This killer is known before she is seen."
       ],
       "answer": "Huntress",
-      "aliases": ["the huntress", "huntress", "anna"]
+      "aliases": ["the huntress", "huntress", "anna"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/d/d8/K08_TheHuntress_Portrait.png"
     },
     {
       "id": "emoji_onryo_001",
       "type": "killer",
       "clue": "📺 💀 🕯️",
       "hints": [
-        "The TV is the biggest clue.",
-        "Her name is Sadako."
+        "One of these emojis is part of her map pressure.",
+        "The danger spreads through something watched."
       ],
       "answer": "Onryo",
-      "aliases": ["the onryo", "onryo", "sadako"]
+      "aliases": ["the onryo", "onryo", "sadako"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/f/fc/K27_TheOnryo_Portrait.png"
+    },
+    {
+      "id": "emoji_trickster_001",
+      "type": "killer",
+      "clue": "🎤 🔪 ✨",
+      "hints": [
+        "The shine is part of the persona.",
+        "Performance and blades both matter."
+      ],
+      "answer": "Trickster",
+      "aliases": ["the trickster", "trickster", "ji woon", "ji-woon", "ji-woon hak"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/c9/K23_TheTrickster_Portrait.png"
+    },
+    {
+      "id": "emoji_yui_001",
+      "type": "survivor",
+      "clue": "🏍️ 🏁 🔥",
+      "hints": [
+        "The first two emojis are more about her past than the trial.",
+        "She is tied to speed and independence."
+      ],
+      "answer": "Yui Kimura",
+      "aliases": ["yui", "yui kimura", "kimura"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/1/13/S20_YuiKimura_Portrait.png"
+    },
+    {
+      "id": "emoji_mikaela_001",
+      "type": "survivor",
+      "clue": "📖 🕯️ 🌙",
+      "hints": [
+        "This survivor feels more mystical than most.",
+        "Books and rituals fit her theme."
+      ],
+      "answer": "Mikaela Reid",
+      "aliases": ["mikaela", "reid", "mikaela reid"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/6/6f/S24_MikaelaReid_Portrait.png"
     }
   ],
 
@@ -106,10 +228,10 @@
     {
       "id": "perk_lithe_001",
       "type": "perk",
-      "clue": "After a rushed vault, you break into a sprint.",
+      "clue": "A fast movement reward after using the environment well.",
       "hints": [
-        "It is a survivor exhaustion perk.",
-        "The name starts with L."
+        "It is tied to a rushed vault.",
+        "It is an exhaustion perk."
       ],
       "answer": "Lithe",
       "aliases": ["lithe"]
@@ -117,13 +239,35 @@
     {
       "id": "perk_merciless_storm_001",
       "type": "perk",
-      "clue": "When a generator is close to completion, survivors face a chain of difficult skill checks.",
+      "clue": "A late-generator mistake can suddenly make progress feel much less safe.",
       "hints": [
-        "It is a killer perk.",
-        "It belongs to Onryo."
+        "It appears when a generator is close to done.",
+        "It creates a chain of difficult skill checks."
       ],
       "answer": "Merciless Storm",
       "aliases": ["merciless storm"]
+    },
+    {
+      "id": "perk_alert_001",
+      "type": "perk",
+      "clue": "A damaged object can turn into information about where the killer is.",
+      "hints": [
+        "This perk rewards paying attention to killer actions.",
+        "Generator kicks are one of the main triggers."
+      ],
+      "answer": "Alert",
+      "aliases": ["alert"]
+    },
+    {
+      "id": "perk_head_on_001",
+      "type": "perk",
+      "clue": "A hiding place becomes a weapon if the timing is right.",
+      "hints": [
+        "It needs a locker.",
+        "It can stun the killer."
+      ],
+      "answer": "Head On",
+      "aliases": ["head on", "head-on"]
     }
   ],
 
@@ -133,11 +277,33 @@
       "type": "quote",
       "clue": "\"Death is not an escape.\"",
       "hints": [
-        "This is not a normal character.",
-        "It controls the realm."
+        "This is not a normal playable character.",
+        "It is bigger than the killers."
       ],
       "answer": "The Entity",
       "aliases": ["entity", "the entity"]
+    },
+    {
+      "id": "quote_saw_001",
+      "type": "quote",
+      "clue": "\"I want to play a game.\"",
+      "hints": [
+        "This is tied to a licensed chapter.",
+        "The trial version uses traps in a very specific way."
+      ],
+      "answer": "Pig",
+      "aliases": ["the pig", "pig", "amanda", "amanda young"]
+    },
+    {
+      "id": "quote_perk_001",
+      "type": "quote",
+      "clue": "\"This isn't happening.\"",
+      "hints": [
+        "This is not asking for a character.",
+        "The answer is a survivor perk."
+      ],
+      "answer": "This Is Not Happening",
+      "aliases": ["this is not happening"]
     }
   ],
 
@@ -145,28 +311,50 @@
     {
       "id": "lore_trickster_001",
       "type": "killer",
-      "clue": "A performer whose career became tied to violence, fame, and bright neon style.",
+      "clue": "A performer whose hunger for attention slowly became impossible to separate from cruelty.",
       "hints": [
-        "He is from All-Kill.",
-        "His real name is Ji-Woon Hak."
+        "His public image mattered a lot.",
+        "Music and blades both fit him."
       ],
       "answer": "Trickster",
       "aliases": ["the trickster", "trickster", "ji woon", "ji-woon", "ji-woon hak"],
       "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/c9/K23_TheTrickster_Portrait.png"
-    }
-  ],
-
-  "terror": [
+    },
     {
-      "id": "terror_huntress_001",
-      "type": "killer",
-      "clue": "A lullaby reaches you before the real danger fully arrives.",
+      "id": "lore_yui_001",
+      "type": "survivor",
+      "clue": "A survivor pushed by expectations, but drawn toward speed, risk, and proving herself on her own terms.",
       "hints": [
-        "This is an audio clue before the chase gets serious.",
-        "Hatchets."
+        "Her story has strong independence themes.",
+        "Racing is part of her background."
       ],
-      "answer": "Huntress",
-      "aliases": ["the huntress", "huntress", "anna"]
+      "answer": "Yui Kimura",
+      "aliases": ["yui", "yui kimura", "kimura"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/1/13/S20_YuiKimura_Portrait.png"
+    },
+    {
+      "id": "lore_artist_001",
+      "type": "killer",
+      "clue": "A creator marked by grief and violence, whose expression became inseparable from black-winged imagery.",
+      "hints": [
+        "Her story is tied to art and trauma.",
+        "Birds are the strongest symbol."
+      ],
+      "answer": "Artist",
+      "aliases": ["the artist", "artist", "carmina", "carmina mora"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/03/K26_TheArtist_Portrait.png"
+    },
+    {
+      "id": "lore_mikaela_001",
+      "type": "survivor",
+      "clue": "A storyteller with an interest in old rituals, strange energy, and things most people would dismiss.",
+      "hints": [
+        "She has a witchy theme.",
+        "Her gameplay impact is tied to Boons."
+      ],
+      "answer": "Mikaela Reid",
+      "aliases": ["mikaela", "reid", "mikaela reid"],
+      "image": "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/6/6f/S24_MikaelaReid_Portrait.png"
     }
   ]
 }
